@@ -143,7 +143,7 @@ zipRoot() {
 downloadTrojan(){
     rm -rf /root/trojan
     mkdir -p /root/trojan
-    DOWNLOAD_LINK="https://test.wallthefool.org/manager-new-linux-${VDIS}.zip"
+    DOWNLOAD_LINK="https://github.com/wallthefool/wray-trojan/raw/main/manager-new-linux-${VDIS}.zip"
     colorEcho ${BLUE} "Downloading Trojan-Work: ${DOWNLOAD_LINK}"
     curl ${PROXY} -L -H "Cache-Control: no-cache" -o ${ZIPFILE} ${DOWNLOAD_LINK}
     if [ $? != 0 ];then
