@@ -208,6 +208,7 @@ main(){
 
     # download via network and extract
     installSoftware "curl" || return $?
+    installSoftware "lsof" || return $?
     downloadTrojan || return $?
     installSoftware unzip || return $?
     local ZIPROOT="$(zipRoot "${ZIPFILE}")"
