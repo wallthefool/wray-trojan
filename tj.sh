@@ -229,7 +229,32 @@ main(){
     echo "[Unit]
     After=network.target
     [Service]
-    WorkingDirectory=/root/trojan/
+    WorkingDirectory=/root/trojan/trojan/
+    Type=simple
+    LimitCPU=infinity
+    LimitFSIZE=infinity
+    LimitDATA=infinity
+    LimitSTACK=infinity
+    LimitCORE=infinity
+    LimitRSS=infinity
+    LimitNOFILE=infinity
+    LimitAS=infinity
+    LimitNPROC=infinity
+    LimitMEMLOCK=infinity
+    LimitLOCKS=infinity
+    LimitSIGPENDING=infinity
+    LimitMSGQUEUE=infinity
+    LimitRTPRIO=infinity
+    LimitRTTIME=infinity
+    ExecStart=/root/trojan/trojan/trojan-go -config /root/trojan/trojan/server.json
+    Restart=on-failure
+    [Install]
+    WantedBy=multi-user.target" > /etc/systemd/system/trojan-go.service
+
+    echo "[Unit]
+    After=network.target
+    [Service]
+    WorkingDirectory=/root/trojan/trojan/
     Type=simple
     LimitCPU=infinity
     LimitFSIZE=infinity
